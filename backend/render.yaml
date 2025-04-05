@@ -2,7 +2,7 @@ services:
   - type: web
     name: travease-backend
     env: node
-    buildCommand: npm install
+    buildCommand: npm install --legacy-peer-deps
     startCommand: npm start
     plan: free
     envVars:
