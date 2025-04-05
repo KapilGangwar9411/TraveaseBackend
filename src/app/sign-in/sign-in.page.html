@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class=" ">
+        <div class="logo ion-text-center ">
+            <img src="assets/images/logo.png" class="animate__animated animate__zoomInUp">
+        </div>
+
+        <div class="banner animate__animated animate__fadeInUp">
+            <img src="assets/images/sign_img.png">
+        </div>
+    </div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <div class="form">
+        <h2 class="ion-text-center">{{'sign_in_now' | translate}}</h2>
+
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-label style="margin-bottom:5px !important;">{{'phone_number' | translate}}</ion-label>
+                    <div class="phone-input-container">
+                        <div class="country-code">+91</div>
+                        <ion-input mode="md" type="number" placeholder="{{'enter_mobile_number' | translate}}" [(ngModel)]="phoneNumber"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+
+        <ion-button size="large" class="btn animate__animated animate__fadeInUp" expand="round"
+            (click)="continue()" [disabled]="isLoading">
+            <ion-spinner name="crescent" *ngIf="isLoading"></ion-spinner>
+            <span *ngIf="!isLoading">{{'continue' | translate}}</span>
+        </ion-button>
+    </div>
+
+    <div class="social_login animate__animated animate__fadeInUp">
+        <h3 class="ion-text-center">{{'or_continue_with' | translate}}</h3>
+        <div class="button_container d-flex">
+            <ion-row>
+                <ion-col size="6">
+                    <ion-button size="large" expand="full" class="btn" (click)="verification()">
+                        <ion-icon class="zmdi zmdi-facebook ion-text-start"></ion-icon>&nbsp; {{'facebook' | translate}}
+                    </ion-button>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-button size="large" expand="full" class="btn" (click)="verification()">
+                        <ion-icon class="zmdi zmdi-google ion-text-start"></ion-icon>&nbsp;&nbsp; {{'google' |
+                        translate}}
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+</ion-footer>

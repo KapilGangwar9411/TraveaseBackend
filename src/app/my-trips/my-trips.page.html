@@ -1,0 +1,664 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-title>
+            <div class="title-inner d-flex">
+                <span> {{'my_trips' | translate}}</span>
+                <ion-icon class="zmdi zmdi-time-restore end ion-text-end"></ion-icon>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+
+
+    <ion-segment mode="ios" [(ngModel)]="segment" (ionChange)="onSegmentChange($event)">
+        <ion-segment-button mode="ios" value="0">
+            <ion-label class=ion-text-start>
+                {{'offering' | translate}}
+            </ion-label>
+        </ion-segment-button>
+        <ion-segment-button mode="ios" value="1">
+            <ion-label class=ion-text-start>
+                {{'finding' | translate}}
+            </ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content fullscreen>
+    <swiper-container class="swiper-container" id="swiper2" (swiperslidechange)="onSlideChange($event)">
+        <div class="swiper-slide">
+            <ion-list lines="none">
+                <ion-item class="animate__animated animate__fadeInUp offering_pool">
+                    <ion-label class="d-flex">
+                        <div class="ride_info" (click)="TripInfo()">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">6:30 pm
+                                        <span>{{'today' | translate}}</span>
+                                    </h2>
+
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="scroll-x end" (click)="pool_taker_request()">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/5.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/4.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center">
+                                    <div class="img_box center_img">
+                                        <ion-icon class="zmdi zmdi-account ion-text-center"></ion-icon>
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center">
+                                    <div class="img_box center_img">
+                                        <ion-icon class="zmdi zmdi-account ion-text-center"></ion-icon>
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3> {{'requests' | translate}}
+                                    <span>1</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp offering_pool">
+                    <ion-label class="d-flex">
+                        <div class="ride_info" (click)="TripInfo()">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">6:30 pm
+                                        <span>22 June</span>
+                                    </h2>
+
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="scroll-x end" (click)="pool_taker_request()">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/3.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/4.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/7.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/1.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3> {{'requests' | translate}}
+                                    <span>1</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp offering_pool">
+                    <ion-label class="d-flex">
+                        <div class="ride_info" (click)="TripInfo()">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">6:30 pm
+                                        <span>22 June</span>
+                                    </h2>
+
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="scroll-x end" (click)="pool_taker_request()">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/3.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/4.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/7.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/1.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3> {{'requests' | translate}}
+                                    <span>1</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInUp offering_pool">
+                    <ion-label class="d-flex">
+                        <div class="ride_info" (click)="TripInfo()">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">6:30 pm
+                                        <span>{{'today' | translate}}</span>
+                                    </h2>
+
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="scroll-x end" (click)="pool_taker_request()">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/5.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/4.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center">
+                                    <div class="img_box center_img">
+                                        <ion-icon class="zmdi zmdi-account ion-text-center"></ion-icon>
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center">
+                                    <div class="img_box center_img">
+                                        <ion-icon class="zmdi zmdi-account ion-text-center"></ion-icon>
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3> {{'requests' | translate}}
+                                    <span>1</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp offering_pool">
+                    <ion-label class="d-flex">
+                        <div class="ride_info" (click)="TripInfo()">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">6:30 pm
+                                        <span>22 June</span>
+                                    </h2>
+
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="scroll-x end" (click)="pool_taker_request()">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/3.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/4.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/7.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/1.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3> {{'requests' | translate}}
+                                    <span>1</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp offering_pool">
+                    <ion-label class="d-flex">
+                        <div class="ride_info" (click)="TripInfo()">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">6:30 pm
+                                        <span>22 June</span>
+                                    </h2>
+
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="scroll-x end" (click)="pool_taker_request()">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/3.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/4.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/7.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/profiles/1.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3> {{'requests' | translate}}
+                                    <span>1</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </div>
+
+        <div class="swiper-slide">
+            <ion-list lines="none">
+                <ion-item class="animate__animated animate__fadeInUp finding_pool" (click)="TripInfo()">
+                    <ion-label class="d-flex">
+                        <div class="ride_info">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">10:30 am
+                                        <span>{{'today' | translate}}</span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="scroll-x end">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center">
+                                    <div class="img_box center_img">
+                                        <ion-icon class="zmdi zmdi-car ion-text-center"></ion-icon>
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3>
+                                    {{'pending' | translate}}
+                                    <!-- <span>16</span> -->
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp finding_pool" (click)="TripInfo()">
+                    <ion-label class="d-flex">
+                        <div class="ride_info">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">10:30 am
+                                        <span>23 June</span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="scroll-x end">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <!-- <ion-icon class="zmdi zmdi-car ion-text-center"></ion-icon> -->
+                                        <img src="assets/images/profiles/10.png" class="crop_img">
+                                    </div>
+                                    <!-- <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4> -->
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3>
+                                    {{'accepted' | translate}}
+                                    <!-- <span>16</span> -->
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp finding_pool" (click)="TripInfo()">
+                    <ion-label class="d-flex">
+                        <div class="ride_info">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">10:30 am
+                                        <span>23 June</span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="scroll-x end">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <ion-icon class="zmdi zmdi-car ion-text-center"></ion-icon>
+                                        <!-- <img src="assets/images/profiles/10.png" class="crop_img"> -->
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3>
+                                    {{'rejected' | translate}}
+                                    <!-- <span>16</span> -->
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp finding_pool" (click)="TripInfo()">
+                    <ion-label class="d-flex">
+                        <div class="ride_info">
+                            <div class="item_header d-flex">
+                                <div class="text_box">
+                                    <h2 class="d-flex">10:30 am
+                                        <span>23 June</span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="location_info">
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-circle ion-text-center"></ion-icon>
+                                    Hemiltone Bridge, New York
+                                </h4>
+                                <div class="dotts">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <h4 class="d-flex">
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-center"></ion-icon>
+                                    World Trade Point, New York
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="scroll-x end">
+                            <div class="img_container">
+                                <div class="scroll-item ion-text-center active">
+                                    <div class="img_box center_img">
+                                        <!-- <ion-icon class="zmdi zmdi-car ion-text-center"></ion-icon> -->
+                                        <img src="assets/images/profiles/10.png" class="crop_img">
+                                    </div>
+                                    <h4>
+                                        <ion-icon class="zmdi zmdi-check ion-text-center"></ion-icon>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <h3>
+                                    {{'accepted' | translate}}
+                                    <!-- <span>16</span> -->
+                                </h3>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </div>
+    </swiper-container>
+</ion-content>

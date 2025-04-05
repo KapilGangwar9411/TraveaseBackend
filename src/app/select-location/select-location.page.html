@@ -1,0 +1,86 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            {{'select_location' | translate}}
+        </ion-title>
+    </ion-toolbar>
+    <div class="search_box d-flex">
+        <ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
+        <ion-searchbar mode="md" class="" searchIcon="hide" placeholder="{{'enter_location' | translate}}"></ion-searchbar>
+    </div>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-list lines="none">
+        <ion-item class="animate__animated animate__fadeInUp pin_on_map" (click)="LocationSelected()">
+            <div class="item_inner d-flex">
+                <ion-icon class="zmdi zmdi zmdi-pin-drop"></ion-icon>
+                <div class="text_box">
+                    <h2 class="d-flex">{{'pin_on_map' | translate}}</h2>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="LocationSelected()">
+            <div class="item_inner d-flex">
+                <ion-icon class="zmdi  zmdi-time-restore-setting"></ion-icon>
+                <div class="text_box">
+                    <h2 class="d-flex">New York</h2>
+                    <h3>1024, Venterl Park, Hemiltone, New York</h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="LocationSelected()">
+            <div class="item_inner d-flex">
+                <ion-icon class="zmdi  zmdi-time-restore-setting"></ion-icon>
+                <div class="text_box">
+                    <h2 class="d-flex">Jorden Park</h2>
+                    <h3>B1140, City Center, Hemiltone, Jorden Park </h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="LocationSelected()">
+            <div class="item_inner d-flex">
+                <ion-icon class="zmdi  zmdi-time-restore-setting"></ion-icon>
+                <div class="text_box">
+                    <h2 class="d-flex">lllinois</h2>
+                    <h3>M141, NY Food Center, Williomson st, lllinois</h3>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="LocationSelected()">
+            <div class="item_inner d-flex">
+                <ion-icon class="zmdi zmdi-home"></ion-icon>
+                <div class="text_box">
+                    <h2 class="d-flex">{{'home' | translate}}</h2>
+                    <h3>B121 - Galaxy Residency, Hemiltone Tower, <br>New York, UAS.</h3>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="LocationSelected()">
+            <div class="item_inner d-flex">
+                <ion-icon class="zmdi zmdi-case-check"></ion-icon>
+                <div class="text_box">
+                    <h2 class="d-flex">{{'office' | translate}}</h2>
+                    <h3> 104 Business House, Near City Bank, <br>New York, UAS.</h3>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="LocationSelected()">
+            <div class="item_inner d-flex">
+                <ion-icon class="zmdi zmdi-nature-people"></ion-icon>
+                <div class="text_box">
+                    <h2 class="d-flex">{{'other' | translate}}</h2>
+                    <h3> 1141, Peter Farm House, Cith Gardern Villas <br>New York, UAS.</h3>
+                </div>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>
